@@ -1,0 +1,10 @@
+Colors: 
+
+Main body Background: #2A2F4F
+tik-tak box color: #829191
+
+bottom-first: #35A7FF
+bottom-second: #E7CEE3
+bottom-third: #FFE74C
+
+#2a2f4f

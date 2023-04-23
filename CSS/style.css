@@ -1,0 +1,266 @@
+:root {
+  --dark-blue: #242038;
+  --light-blue: #2a2f4f;
+  --blue: #35a7ff;
+  --light-pink: #e7cee3;
+  --orange: #ffe74c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html,
+body {
+  background-color: var(--dark-blue);
+}
+
+body {
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  width: 500px;
+  margin-left: 100px;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: 50px repeat(3, 120px) 40px;
+  grid-gap: 10px;
+}
+
+.turn {
+  align-self: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+}
+
+/* .turn i {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  animation: 0.7s ease-in-out turn-icon-animation;
+} */
+
+.animateIcon {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  animation: 0.7s ease-in-out turn-icon-animation;
+}
+
+@keyframes turn-icon-animation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* .turn p {
+  font-size: 15px;
+  animation: 0.7s ease-in-out turn-text-animation;
+} */
+
+.animateText {
+  font-size: 15px;
+  animation: 0.7s ease-in-out turn-text-animation;
+}
+
+@keyframes turn-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-btn:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.menu .items {
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  background-color: var(--light-blue);
+  border-radius: 5px;
+  padding: 4px;
+}
+
+/* Shared Classes */
+
+.hidden {
+  display: none !important;
+}
+
+.border {
+  border: 2px solid lightpink;
+}
+
+.blue {
+  color: var(--blue) !important;
+}
+
+.yellow {
+  color: var(--orange) !important;
+}
+
+.menu .items button {
+  background-color: transparent;
+  padding: 8px;
+  color: white;
+}
+
+.menu .items button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menu-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--light-blue);
+  border: 1ps solid transparent;
+}
+
+.square {
+  background-color: var(--light-blue);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.square:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.shadow {
+  box-shadow: -3px 3px 17px -4px rgba(0, 0, 0, 0.61);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.score p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#text {
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+footer p {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--light-pink);
+}
+
+footer a {
+  color: var(--blue);
+  margin-left: 5px;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.modal-contents {
+  transform: translateY(-80px);
+  height: 150px;
+  width: 100%;
+  max-width: 300px;
+  background-color: var(--light-pink);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: var(--blue);
+  margin: 10px;
+}
+
+.modal-contents p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.modal-contents button {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+  background-color: var(--blue);
+}
+
+.modal-contents button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: 20px repeat(3, 80px) 40px;
+  grid-gap: 10px;
+} */
+
+/* @media (min-width: 756px) {
+  body {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid {
+    width: 500px;
+    margin-left: 100px;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: 50px repeat(3, 120px) 60px;
+    grid-gap: 10px;
+  }
+} */
