@@ -24,7 +24,10 @@ function init() {
     const test = new Test();  // optional
     const store = new Store('live-t3-storage-key', players);
 
-    
+    const data = localStorage.getItem('live-t3-storage-key');
+    // console.log(JSON.parse(data));
+
+
     store.addEventListener('statechange', () => {
         view.render(store.game, store.stats);
     })
