@@ -64,7 +64,14 @@ export default class Store extends EventTarget {
     get game() {
         const state = this.#getState();
 
-        const currentPlayer = this.players[state.CurrentGameMoves.length % 2];
+        let currentMovesLength = state.CurrentGameMoves.length % 2;
+        let currentRoundLength = state.history.currentRoundGames.length % 2;
+
+        let currentPlayer = this.players[currentMovesLength + currentRoundLength];
+
+        if ((currentMovesLength + currentRoundLength) === 2 ) {
+            currentPlayer = this.players[(currentMovesLength + currentRoundLength) - 2];
+        };
 
         const winningPattern = [
             [1, 2, 3],
